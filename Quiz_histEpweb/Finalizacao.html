@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Silkscreen&display=swap" rel="stylesheet">
+
+    <script src="script.js"></script>
+
+
+    <style>
+
+        body::before{
+            content: "";
+            position: absolute;
+            top: 8%;
+            left: 3%;
+            width: 93%;
+            height: 55%;
+            background-color: #1f172e;
+            z-index: 1;
+            border-style: inset;
+            border-color: #a4cde6;
+            border-right-width: 3%;
+            border-top-width: 3%;
+            border-bottom-width: 3%;
+            border-left-width: 3%;
+            font-family: 'Silkscreen', cursive;;
+        }
+
+        body{
+            background-color: #221d2c;
+            overflow: hidden;
+        }
+
+
+        .Reiniciar{
+            display: block;
+            position: absolute;
+            width: 132px;
+            height: 141px;
+            top: 73.5%;
+            left: 45%;
+
+        }
+
+        .ImgReiniciar{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .TextoAcertos{
+            position: absolute;
+            top: 20%;
+            left: 7%;
+            font-size: 400%;
+            font-family: 'Silkscreen', cursive;
+            color: rgb(188, 191, 236);
+            z-index: 2;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <div>
+        <p class="TextoAcertos" id="TextoAcertos"></p>
+    </div>
+
+    <p class="TextoReiniciar" id="TextoReiniciar"></p>
+    <div class="Reiniciar" onclick="BotaoReiniciar()">
+        <img src="Imagens/Reiniciar.png" alt="Reiniciar" class="ImgReiniciar">
+    </div>
+
+
+
+
+<script type="text/javascript">
+
+const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const acertos = urlParams.get('Acertos');
+
+var TextoAcertos = document.getElementById('TextoAcertos');
+    TextoAcertos.textContent = 'Você acertou ' +acertos+ ' de 8 perguntas.'
+    
+    function BotaoReiniciar(){
+        window.location.href = 'index.html';
+        }
+
+</script>
+
+
+</body>
+</html>
